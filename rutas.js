@@ -4,13 +4,17 @@ function inicio(){
 
 map=L.map('map').setView([37.048913, -2.741784],8);
 
-var terrain= L.tileLayer(
-	'https://{s}.tiles.mapbox.com/v3/southmapping.k1cjibk0/{z}/{x}/{y}.png',
-	{attribution:'<a href="http://www.southmapping.com">Southmapping.com</a></br>&copy; <a href="http://www.mapbox.com">MapBox</a> &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+var terrain=L.tileLayer('https://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}', {
+    attribution: '<a href="https://www.mapbox.com/about/maps/" target="_blank">&copy; Mapbox &copy; OpenStreetMap</a>',
+    subdomains: ['a','b','c','d'],
+    mapId: 'southmapping.k1cjibk0',
+    token: 'pk.eyJ1Ijoic291dGhtYXBwaW5nIiwiYSI6IkdsNWJpUzQifQ.wGioWqTZt28vefHwFu1hQA'}).addTo(map);
 
-var satellite= L.tileLayer(
-	'https://{s}.tiles.mapbox.com/v3/southmapping.k1egc4nh/{z}/{x}/{y}.png',
-	{attribution: '<a href="http://www.southmapping.com">Southmapping.com</a></br>&copy; <a href="http://www.mapbox.com">MapBox</a> &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+var satellite=L.tileLayer('https://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}', {
+    attribution: '<a href="https://www.mapbox.com/about/maps/" target="_blank">&copy; Mapbox &copy; OpenStreetMap</a>',
+    subdomains: ['a','b','c','d'],
+    mapId: 'southmapping.k1egc4nh',
+    token: 'pk.eyJ1Ijoic291dGhtYXBwaW5nIiwiYSI6IkdsNWJpUzQifQ.wGioWqTZt28vefHwFu1hQA'}).addTo(map);
 
 /*var pnoa = L.tileLayer.wms("http://www.ign.es/wms-inspire/pnoa-ma?SERVICE=WMS&", {
     layers: 'OI.OrthoimageCoverage',

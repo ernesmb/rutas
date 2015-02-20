@@ -16,14 +16,6 @@ var satellite=L.tileLayer('https://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.p
     mapId: 'southmapping.k1egc4nh',
     token: 'pk.eyJ1Ijoic291dGhtYXBwaW5nIiwiYSI6IkdsNWJpUzQifQ.wGioWqTZt28vefHwFu1hQA'}).addTo(map);
 
-/*var pnoa = L.tileLayer.wms("http://www.ign.es/wms-inspire/pnoa-ma?SERVICE=WMS&", {
-    layers: 'OI.OrthoimageCoverage',
-    format: 'image/png',
-    transparent: true,
-    attribution: "Cedido por © Instituto Geográfico Nacional"
-}).addTo(map);*/
-
-
 //estilos
 var estilo_al={"color":"#1AD3AA","weight": 3, "opacity":0.8};
 var estilo_gr={"color":"#FF5A00","weight": 3, "opacity":0.8};
@@ -63,7 +55,7 @@ var granada=L.featureGroup([gr1, gr2, gr4, gr5, gr6]).addTo(map);
 
 //Control de capas
 var base={"Relieve":terrain, "Sat&eacute;lite":satellite};
-var overlay={/*"PNOA":pnoa, */"Rutas de Almer&iacute;a":almeria, "Rutas de Granada":granada};
+var overlay={"Rutas de Almer&iacute;a":almeria, "Rutas de Granada":granada};
 L.control.layers(base, overlay).addTo(map);
 
 //FIN INICIO()//
